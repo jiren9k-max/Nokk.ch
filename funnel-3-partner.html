@@ -1,0 +1,56 @@
+<!DOCTYPE html><html lang="de-CH"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Partnervergünstigungen – dinifirma.ch</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+  <link rel="apple-touch-icon" href="assets/favicon-180.png">
+  <link rel="shortcut icon" href="assets/favicon.ico">
+  <link rel="stylesheet" href="styles.css"></head><body class="funnel-body">
+
+<header class="funnel-header">
+  <div class="container top">
+    <a class="logo" href="index.html" aria-label="dinifirma.ch"><img class="logo-wordmark" src="assets/dinifirma-wordmark.png" alt="dinifirma.ch"></a>
+    <div class="steps-top"><div class="step-pill done"><span class="num">1</span><span>Vorhaben</span></div><span class="arrow">⟶</span><div class="step-pill done"><span class="num">2</span><span>Paket</span></div><span class="arrow">⟶</span><div class="step-pill active"><span class="num">3</span><span>Partner</span></div><span class="arrow">⟶</span><div class="step-pill"><span class="num">4</span><span>Extras</span></div><span class="arrow">⟶</span><div class="step-pill"><span class="num">5</span><span>Details</span></div><span class="arrow">⟶</span><div class="step-pill"><span class="num">6</span><span>Bestellung</span></div></div>
+    <div class="support"><strong>Support: 071 221 00 00</strong><div class="langs">DE &nbsp; FR &nbsp; IT &nbsp; EN</div></div>
+  </div>
+</header>
+
+<main class="container funnel-shell"><div class="funnel-grid">
+<section class="funnel-card">
+<span class="badge"><span class="dot"></span>Schritt 3 von 6</span>
+<h1>Mit passenden Partnerangeboten zusätzlich sparen.</h1>
+<p class="intro">Du entscheidest selbst. Wähle nur Angebote aus, die wirklich zu deinem Unternehmen passen. Wenn du einen entsprechenden Vertrag abschliesst und die Voraussetzungen erfüllst, rechnen wir die Vergünstigung direkt an dein Gründungspaket an.</p>
+<div class="partner-grid">
+  <div class="partner" data-discount="100" data-name="Valiant"><div class="partner-logo">V</div><div class="partner-main"><h4>Valiant</h4><p>Geschäftskonto für dein Unternehmen.</p><div class="discount">Vergünstigung CHF 100.–</div></div><button class="toggle" aria-label="Valiant auswählen"></button></div>
+  <div class="partner" data-discount="200" data-name="VitaSecura AG"><div class="partner-logo">VS</div><div class="partner-main"><h4>VitaSecura AG</h4><p>Passende Firmenversicherungen für deinen Start.</p><div class="discount">Vergünstigung CHF 200.–</div></div><button class="toggle" aria-label="VitaSecura AG auswählen"></button></div>
+  <div class="partner" data-discount="70" data-name="Sunrise"><div class="partner-logo">S</div><div class="partner-main"><h4>Sunrise</h4><p>Telekommunikationslösung für dein Unternehmen.</p><div class="discount">Vergünstigung CHF 70.–</div></div><button class="toggle" aria-label="Sunrise auswählen"></button></div>
+  <div class="partner" data-discount="700" data-name="FiNow"><div class="partner-logo">FN</div><div class="partner-main"><h4>FiNow</h4><p>Treuhandlösung für einen sauberen Start.</p><div class="discount">Vergünstigung CHF 700.–</div></div><button class="toggle" aria-label="FiNow auswählen"></button></div>
+  <div class="partner" data-discount="200" data-name="Bilanza"><div class="partner-logo">B</div><div class="partner-main"><h4>Bilanza</h4><p>Digitale Buchhaltung, Rechnungen und Lohnabrechnung.</p><div class="discount">Vergünstigung CHF 200.–</div></div><button class="toggle" aria-label="Bilanza auswählen"></button></div>
+  <div class="partner" data-discount="700" data-name="nokk.ch"><div class="partner-logo">NK</div><div class="partner-main"><h4>nokk.ch</h4><p>Individuelle Websites, Apps, CRM-Systeme und digitale Kundenlösungen im Abonnement.</p><div class="discount">Vergünstigung CHF 700.– Gutschein</div></div><button class="toggle" aria-label="nokk.ch auswählen"></button></div>
+</div>
+<div class="info good">Maximal mögliche Vergünstigung: <strong>CHF 1’970.–</strong>. Die Vergünstigung wird maximal bis zur Höhe des gewählten Paketpreises angerechnet. Eine Auszahlung des Restbetrags ist nicht möglich.</div>
+<div class="actions"><button class="btn btn-secondary" onclick="back('funnel-2-paket.html')">Zurück</button><button class="btn btn-primary" onclick="next('funnel-4-extras.html')">Weiter zu den Zusatzleistungen</button></div>
+</section>
+
+<aside class="summary-card">
+  <h3>Deine Offerte</h3>
+  <div class="summary-row"><span>Paket</span><strong id="sPackage">Basic</strong></div>
+  <div class="summary-row"><span>Paketpreis</span><strong id="sPackagePrice">CHF 150.–</strong></div>
+  <div class="summary-row"><span>Partnervergünstigungen</span><strong id="sDiscount">– CHF 0.–</strong></div>
+  <div class="summary-row"><span>Zusatzleistungen</span><strong id="sExtras">0 ausgewählt</strong></div>
+  <div class="summary-total"><span>Zu bezahlen</span><strong id="sTotal">CHF 150.–</strong></div>
+  <div class="saving" id="sSaving">Du kannst deinen Paketpreis mit passenden Partnerangeboten reduzieren.</div>
+  <div class="summary-note">Vergünstigungen werden maximal bis zur Höhe des Paketpreises angerechnet. Eine Auszahlung ist nicht möglich.</div>
+</aside>
+
+</div></main>
+<script src="app.js"></script><script>
+const state=loadState(); updateSummary(state);
+function render(){ document.querySelectorAll(".partner").forEach(card=>card.classList.toggle("selected",(state.discounts||[]).some(x=>x.name===card.dataset.name))); }
+render();
+document.querySelectorAll(".partner .toggle").forEach(btn=>btn.addEventListener("click",()=>{ 
+  const card=btn.closest(".partner"); 
+  const item={name:card.dataset.name,discount:Number(card.dataset.discount)}; 
+  const exists=(state.discounts||[]).some(x=>x.name===item.name); 
+  state.discounts=exists?state.discounts.filter(x=>x.name!==item.name):[...(state.discounts||[]),item]; 
+  saveState(state); updateSummary(state); render(); 
+}));
+</script></body></html>

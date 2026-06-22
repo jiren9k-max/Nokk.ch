@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="de-CH"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Vorhaben – dinifirma.ch</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+  <link rel="apple-touch-icon" href="assets/favicon-180.png">
+  <link rel="shortcut icon" href="assets/favicon.ico">
+
+  <link rel="stylesheet" href="styles.css"></head>
+<body class="funnel-body">
+
+<header class="funnel-header">
+  <div class="container top">
+    <a class="logo" href="index.html" aria-label="dinifirma.ch"><img class="logo-wordmark" src="assets/dinifirma-wordmark.png" alt="dinifirma.ch"></a>
+    <div class="steps-top"><div class="step-pill active"><span class="num">1</span><span>Vorhaben</span></div><span class="arrow">⟶</span><div class="step-pill"><span class="num">2</span><span>Paket</span></div><span class="arrow">⟶</span><div class="step-pill"><span class="num">3</span><span>Partner</span></div><span class="arrow">⟶</span><div class="step-pill"><span class="num">4</span><span>Extras</span></div><span class="arrow">⟶</span><div class="step-pill"><span class="num">5</span><span>Details</span></div><span class="arrow">⟶</span><div class="step-pill"><span class="num">6</span><span>Bestellung</span></div></div>
+    <div class="support"><strong>Support: 071 221 00 00</strong><div class="langs">DE &nbsp; FR &nbsp; IT &nbsp; EN</div></div>
+  </div>
+</header>
+
+<main class="container funnel-shell"><div class="funnel-grid">
+<section class="funnel-card">
+<span class="badge"><span class="dot"></span>Schritt 1 von 6</span>
+<h1>Erzähle uns kurz von deinem Vorhaben.</h1>
+<p class="intro">Beantworte wenige Fragen. Wir stellen daraus dein persönliches Gründungspaket zusammen.</p>
+
+<div class="form-section">
+  <div class="form-section-title">Wie soll deine Firma heissen?</div>
+  <div class="inline"><input id="companyName" placeholder="z. B. Musterwerk GmbH"><button class="btn btn-primary" id="checkNameBtn">Namen prüfen</button></div>
+  <div id="nameResult" class="info hidden"></div>
+</div>
+
+<div class="form-section">
+  <div class="form-section-title">Welche Rechtsform möchtest du gründen?</div>
+  <div class="choice-grid">
+    <button class="choice legal-choice" data-value="Einzelfirma">Einzelfirma<span>Einfach und unkompliziert starten.</span></button>
+    <button class="choice legal-choice" data-value="GmbH">GmbH<span>Professionell auftreten und Haftung begrenzen.</span></button>
+    <button class="choice legal-choice" data-value="AG">AG<span>Für grössere Vorhaben und Beteiligungen.</span></button>
+    <button class="choice legal-choice" data-value="Noch unsicher">Noch unsicher<span>Wir helfen dir kostenlos bei der Auswahl.</span></button>
+  </div>
+</div>
+
+<div class="form-section">
+  <div class="input-row">
+    <div class="field"><label>Gründungskanton</label><select id="canton">
+      <option value="">Bitte auswählen</option><option>Ich bin noch unsicher</option><option>Aargau</option><option>Appenzell Ausserrhoden</option><option>Appenzell Innerrhoden</option><option>Basel-Landschaft</option><option>Basel-Stadt</option><option>Bern</option><option>Freiburg</option><option>Genf</option><option>Glarus</option><option>Graubünden</option><option>Jura</option><option>Luzern</option><option>Neuenburg</option><option>Nidwalden</option><option>Obwalden</option><option>Schaffhausen</option><option>Schwyz</option><option>Solothurn</option><option>St. Gallen</option><option>Thurgau</option><option>Tessin</option><option>Uri</option><option>Waadt</option><option>Wallis</option><option>Zug</option><option>Zürich</option>
+    </select></div>
+    <div class="field"><label>Geschäftsadresse</label><select id="address"><option value="">Bitte auswählen</option><option>Ja, ich habe bereits eine Geschäftsadresse</option><option>Ich nutze meine Privatadresse</option><option>Ich benötige ein Geschäftsdomizil</option><option>Ich bin noch unsicher</option></select></div>
+  </div>
+</div>
+
+<div class="form-section">
+  <div class="form-section-title">Was wird deine Firma anbieten?</div>
+  <div class="choice-grid three">
+    <button class="choice activity-choice" data-value="Dienstleistungen">Dienstleistungen</button>
+    <button class="choice activity-choice" data-value="Handel oder Online-Shop">Handel oder Online-Shop</button>
+    <button class="choice activity-choice" data-value="Bau, Reinigung oder Handwerk">Bau, Reinigung oder Handwerk</button>
+    <button class="choice activity-choice" data-value="Gastronomie oder Beauty">Gastronomie oder Beauty</button>
+    <button class="choice activity-choice" data-value="Beratung, IT oder Marketing">Beratung, IT oder Marketing</button>
+    <button class="choice activity-choice" data-value="Andere Tätigkeit">Andere Tätigkeit</button>
+  </div>
+  <div class="field" style="margin-top:12px"><label>Beschreibe dein Angebot in einem Satz</label><textarea id="activityText" placeholder="z. B. Beratung und Umsetzung von digitalen Marketinglösungen für KMU."></textarea></div>
+  <div class="info">Wir helfen dir, daraus einen professionellen und ausreichend breiten Firmenzweck zu formulieren.</div>
+</div>
+
+<div class="form-section">
+  <div class="input-row three">
+    <div class="field"><label>Beteiligte Personen</label><select id="founders"><option>1 Person</option><option>2 Personen</option><option>3 Personen</option><option>4 oder mehr Personen</option><option>Eine Firma ist beteiligt</option><option>Eine ausländische Person oder Firma ist beteiligt</option></select></div>
+    <div class="field"><label>Erwarteter Umsatz im ersten Jahr</label><select id="turnover"><option>Noch unsicher</option><option>unter CHF 100’000</option><option>CHF 100’000 bis 250’000</option><option>CHF 250’000 bis 500’000</option><option>über CHF 500’000</option></select></div>
+    <div class="field"><label>Wann möchtest du starten?</label><select id="timing"><option>So schnell wie möglich</option><option>Innerhalb der nächsten 30 Tage</option><option>Innerhalb der nächsten 3 Monate</option><option>Ich informiere mich zuerst</option></select></div>
+  </div>
+</div>
+
+<div class="form-section hidden" id="capitalBlock">
+  <div class="input-row">
+    <div class="field"><label>Geplantes Kapital in CHF</label><input id="capital" type="number" placeholder="z. B. 20000"></div>
+    <div class="field"><label>Direkte Einzahlung in CHF</label><input id="paidCapital" type="number" placeholder="z. B. 20000"></div>
+  </div>
+</div>
+
+<div class="actions"><a class="btn btn-secondary" href="index.html">Zurück</a><button class="btn btn-primary" id="nextBtn">Weiter zum Paket</button></div>
+</section>
+
+<aside class="summary-card">
+  <h3>Deine Offerte</h3>
+  <div class="summary-row"><span>Paket</span><strong id="sPackage">Basic</strong></div>
+  <div class="summary-row"><span>Paketpreis</span><strong id="sPackagePrice">CHF 150.–</strong></div>
+  <div class="summary-row"><span>Partnervergünstigungen</span><strong id="sDiscount">– CHF 0.–</strong></div>
+  <div class="summary-row"><span>Zusatzleistungen</span><strong id="sExtras">0 ausgewählt</strong></div>
+  <div class="summary-total"><span>Zu bezahlen</span><strong id="sTotal">CHF 150.–</strong></div>
+  <div class="saving" id="sSaving">Du kannst deinen Paketpreis mit passenden Partnerangeboten reduzieren.</div>
+  <div class="summary-note">Vergünstigungen werden maximal bis zur Höhe des Paketpreises angerechnet. Eine Auszahlung ist nicht möglich.</div>
+</aside>
+
+</div></main>
+<script src="app.js"></script>
+<script>
+const state=loadState(); updateSummary(state);
+const ids=["companyName","canton","address","founders","turnover","timing","capital","paidCapital","activityText"];
+ids.forEach(id=>{ const el=document.getElementById(id); if(el && state[id]!==undefined) el.value=state[id]; });
+function renderSelected(){
+ document.querySelectorAll(".legal-choice").forEach(btn=>btn.classList.toggle("selected",btn.dataset.value===state.legal));
+ document.querySelectorAll(".activity-choice").forEach(btn=>btn.classList.toggle("selected",btn.dataset.value===state.activity));
+ document.getElementById("capitalBlock").classList.toggle("hidden",!(state.legal==="GmbH"||state.legal==="AG"));
+}
+renderSelected();
+document.getElementById("checkNameBtn").addEventListener("click",()=>{
+ const r=simulatedNameCheck(document.getElementById("companyName").value);
+ const el=document.getElementById("nameResult"); el.className="info "+r.cls; el.textContent=r.text;
+ state.companyName=document.getElementById("companyName").value; state.nameChecked=true; saveState(state);
+});
+document.querySelectorAll(".legal-choice").forEach(btn=>btn.addEventListener("click",()=>{ state.legal=btn.dataset.value; saveState(state); renderSelected(); }));
+document.querySelectorAll(".activity-choice").forEach(btn=>btn.addEventListener("click",()=>{ state.activity=btn.dataset.value; saveState(state); renderSelected(); }));
+document.getElementById("nextBtn").addEventListener("click",()=>{
+ ids.forEach(id=>{ const el=document.getElementById(id); if(el) state[id]=el.value; });
+ saveState(state); next("funnel-2-paket.html");
+});
+</script></body></html>

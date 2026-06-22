@@ -1,0 +1,54 @@
+<!DOCTYPE html><html lang="de-CH"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Details – dinifirma.ch</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+  <link rel="apple-touch-icon" href="assets/favicon-180.png">
+  <link rel="shortcut icon" href="assets/favicon.ico">
+
+  <link rel="stylesheet" href="styles.css"></head><body class="funnel-body">
+
+<header class="funnel-header">
+  <div class="container top">
+    <a class="logo" href="index.html" aria-label="dinifirma.ch"><img class="logo-wordmark" src="assets/dinifirma-wordmark.png" alt="dinifirma.ch"></a>
+    <div class="steps-top"><div class="step-pill done"><span class="num">1</span><span>Vorhaben</span></div><span class="arrow">⟶</span><div class="step-pill done"><span class="num">2</span><span>Paket</span></div><span class="arrow">⟶</span><div class="step-pill done"><span class="num">3</span><span>Partner</span></div><span class="arrow">⟶</span><div class="step-pill done"><span class="num">4</span><span>Extras</span></div><span class="arrow">⟶</span><div class="step-pill active"><span class="num">5</span><span>Details</span></div><span class="arrow">⟶</span><div class="step-pill"><span class="num">6</span><span>Bestellung</span></div></div>
+    <div class="support"><strong>Support: 071 221 00 00</strong><div class="langs">DE &nbsp; FR &nbsp; IT &nbsp; EN</div></div>
+  </div>
+</header>
+
+<main class="container funnel-shell"><div class="funnel-grid">
+<section class="funnel-card">
+<span class="badge"><span class="dot"></span>Schritt 5 von 6</span>
+<h1>Deine Kontaktdaten.</h1>
+<p class="intro">Damit wir deine Anfrage prüfen und dich persönlich begleiten können.</p>
+<div class="input-row">
+<div class="field"><label>Vorname *</label><input id="firstName"></div>
+<div class="field"><label>Nachname *</label><input id="lastName"></div>
+<div class="field"><label>Telefon *</label><input id="phone" type="tel"></div>
+<div class="field"><label>E-Mail *</label><input id="email" type="email"></div>
+<div class="field"><label>Bevorzugte Sprache</label><select id="language"><option>Deutsch</option><option>Albanisch</option><option>Englisch</option><option>Italienisch</option><option>Andere</option></select></div>
+<div class="field"><label>Beste Erreichbarkeit</label><select id="contactTime"><option>Vormittags</option><option>Nachmittags</option><option>Abends</option><option>Flexibel</option></select></div>
+</div>
+<div class="info">Die detaillierten Gründerangaben, Beteiligungen und Dokumente werden anschliessend geschützt und strukturiert erfasst.</div>
+<div class="actions"><button class="btn btn-secondary" onclick="back('funnel-4-extras.html')">Zurück</button><button class="btn btn-primary" id="nextBtn">Weiter zur Bestellung</button></div>
+</section>
+
+<aside class="summary-card">
+  <h3>Deine Offerte</h3>
+  <div class="summary-row"><span>Paket</span><strong id="sPackage">Basic</strong></div>
+  <div class="summary-row"><span>Paketpreis</span><strong id="sPackagePrice">CHF 150.–</strong></div>
+  <div class="summary-row"><span>Partnervergünstigungen</span><strong id="sDiscount">– CHF 0.–</strong></div>
+  <div class="summary-row"><span>Zusatzleistungen</span><strong id="sExtras">0 ausgewählt</strong></div>
+  <div class="summary-total"><span>Zu bezahlen</span><strong id="sTotal">CHF 150.–</strong></div>
+  <div class="saving" id="sSaving">Du kannst deinen Paketpreis mit passenden Partnerangeboten reduzieren.</div>
+  <div class="summary-note">Vergünstigungen werden maximal bis zur Höhe des Paketpreises angerechnet. Eine Auszahlung ist nicht möglich.</div>
+</aside>
+
+</div></main>
+<script src="app.js"></script><script>
+const state=loadState(); updateSummary(state);
+["firstName","lastName","phone","email","language","contactTime"].forEach(id=>{ const el=document.getElementById(id); el.value=(state.contact||{})[id]||el.value; });
+document.getElementById("nextBtn").addEventListener("click",()=>{
+ const contact={}; ["firstName","lastName","phone","email","language","contactTime"].forEach(id=>contact[id]=document.getElementById(id).value);
+ if(!contact.firstName||!contact.lastName||!contact.phone||!contact.email) return alert("Bitte fülle alle Pflichtfelder aus.");
+ state.contact=contact; saveState(state); next("funnel-6-bestellung.html");
+});
+</script></body></html>

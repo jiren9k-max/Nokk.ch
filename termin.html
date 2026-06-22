@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Termin vereinbaren – dinifirma.ch</title>
+  <meta name="description" content="Vereinbare direkt einen Termin für deine Firmengründung mit dinifirma.ch.">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+  <link rel="apple-touch-icon" href="assets/favicon-180.png">
+  <link rel="shortcut icon" href="assets/favicon.ico">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="funnel-body">
+<header class="funnel-header">
+  <div class="container top">
+    <a class="logo" href="index.html" aria-label="dinifirma.ch"><img class="logo-wordmark" src="assets/dinifirma-wordmark.png" alt="dinifirma.ch"></a>
+    <div class="steps-top">
+      <div class="step-pill done"><span class="num">✓</span><span>Daten erfasst</span></div>
+      <span class="arrow">⟶</span>
+      <div class="step-pill active"><span class="num">2</span><span>Termin wählen</span></div>
+    </div>
+    <div class="support"><strong>Support: 071 221 00 00</strong><div class="langs">DE &nbsp; FR &nbsp; IT &nbsp; EN</div></div>
+  </div>
+</header>
+
+<main class="container funnel-shell">
+  <div class="booking-layout">
+    <section class="funnel-card">
+      <span class="badge"><span class="dot"></span>Persönliche Beratung</span>
+      <h1>Wähle deinen Termin.</h1>
+      <p class="intro">Reserviere direkt ein persönliches Gespräch. Wir klären deine Fragen zur Firmengründung oder Firmenänderung und besprechen die nächsten Schritte.</p>
+
+      <div class="booking-topbar">
+        <div class="booking-select">
+          <label for="bookingDateSelect">Neues Datum</label>
+          <select id="bookingDateSelect">
+            <option value="2026-06-17">Mittwoch, 17. Juni 2026</option>
+            <option value="2026-06-18">Donnerstag, 18. Juni 2026</option>
+            <option value="2026-06-19">Freitag, 19. Juni 2026</option>
+            <option value="2026-06-22">Montag, 22. Juni 2026</option>
+          </select>
+        </div>
+        <div class="booking-select">
+          <label for="bookingTimeSelect">Neue Uhrzeit</label>
+          <select id="bookingTimeSelect">
+            <option value="10:30">10:30</option>
+            <option value="09:00">09:00</option>
+            <option value="09:30">09:30</option>
+            <option value="10:00">10:00</option>
+            <option value="11:00">11:00</option>
+            <option value="11:30">11:30</option>
+            <option value="13:00">13:00</option>
+            <option value="13:30">13:30</option>
+            <option value="14:00">14:00</option>
+          </select>
+        </div>
+        <div class="booking-select">
+          <label for="bookingDurationSelect">Dauer</label>
+          <select id="bookingDurationSelect">
+            <option value="30 Minuten">30 Minuten</option>
+            <option value="45 Minuten">45 Minuten</option>
+            <option value="60 Minuten">60 Minuten</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="booking-panel">
+        <div class="calendar-card">
+          <div class="calendar-head">
+            <button class="calendar-nav" type="button">‹</button>
+            <strong>Juni 2026</strong>
+            <button class="calendar-nav" type="button">›</button>
+          </div>
+          <div class="calendar-weekdays">
+            <span>So</span><span>Mo</span><span>Di</span><span>Mi</span><span>Do</span><span>Fr</span><span>Sa</span>
+          </div>
+          <div class="calendar-days" id="calendarDays">
+            <button class="calendar-day muted" type="button">31</button>
+            <button class="calendar-day available" type="button" data-date="2026-06-01">1</button>
+            <button class="calendar-day available" type="button" data-date="2026-06-02">2</button>
+            <button class="calendar-day available" type="button" data-date="2026-06-03">3</button>
+            <button class="calendar-day available" type="button" data-date="2026-06-04">4</button>
+            <button class="calendar-day available" type="button" data-date="2026-06-05">5</button>
+            <button class="calendar-day available" type="button" data-date="2026-06-06">6</button>
+
+            <button class="calendar-day available" type="button" data-date="2026-06-07">7</button>
+            <button class="calendar-day available" type="button" data-date="2026-06-08">8</button>
+            <button class="calendar-day available" type="button" data-date="2026-06-09">9</button>
+            <button class="calendar-day available" type="button" data-date="2026-06-10">10</button>
+            <button class="calendar-day available" type="button" data-date="2026-06-11">11</button>
+            <button class="calendar-day available" type="button" data-date="2026-06-12">12</button>
+            <button class="calendar-day available" type="button" data-date="2026-06-13">13</button>
+
+            <button class="calendar-day available" type="button" data-date="2026-06-14">14</button>
+            <button class="calendar-day available" type="button" data-date="2026-06-15">15</button>
+            <button class="calendar-day available" type="button" data-date="2026-06-16">16</button>
+            <button class="calendar-day available selected" type="button" data-date="2026-06-17">17</button>
+            <button class="calendar-day available" type="button" data-date="2026-06-18">18</button>
+            <button class="calendar-day available" type="button" data-date="2026-06-19">19</button>
+            <button class="calendar-day available" type="button" data-date="2026-06-20">20</button>
+
+            <button class="calendar-day available" type="button" data-date="2026-06-21">21</button>
+            <button class="calendar-day available" type="button" data-date="2026-06-22">22</button>
+            <button class="calendar-day available" type="button" data-date="2026-06-23">23</button>
+            <button class="calendar-day available" type="button" data-date="2026-06-24">24</button>
+            <button class="calendar-day available" type="button" data-date="2026-06-25">25</button>
+            <button class="calendar-day available" type="button" data-date="2026-06-26">26</button>
+            <button class="calendar-day available" type="button" data-date="2026-06-27">27</button>
+
+            <button class="calendar-day available" type="button" data-date="2026-06-28">28</button>
+            <button class="calendar-day available" type="button" data-date="2026-06-29">29</button>
+            <button class="calendar-day available" type="button" data-date="2026-06-30">30</button>
+            <button class="calendar-day muted" type="button">1</button>
+            <button class="calendar-day muted" type="button">2</button>
+            <button class="calendar-day muted" type="button">3</button>
+            <button class="calendar-day muted" type="button">4</button>
+          </div>
+        </div>
+
+        <div class="time-card">
+          <h3>Verfügbare Zeiten für <span id="selectedDateTitle">Mittwoch, 17. Juni 2026</span></h3>
+          <div class="slot-grid" id="slotGrid">
+            <button class="time-slot" type="button" data-time="09:00">09:00</button>
+            <button class="time-slot" type="button" data-time="09:30">09:30</button>
+            <button class="time-slot" type="button" data-time="10:00">10:00</button>
+            <button class="time-slot selected" type="button" data-time="10:30">10:30</button>
+            <button class="time-slot" type="button" data-time="11:00">11:00</button>
+            <button class="time-slot" type="button" data-time="11:30">11:30</button>
+            <button class="time-slot" type="button" data-time="13:00">13:00</button>
+            <button class="time-slot" type="button" data-time="13:30">13:30</button>
+            <button class="time-slot" type="button" data-time="14:00">14:00</button>
+          </div>
+
+          <div class="form-section" style="padding-top:18px">
+            <div class="form-section-title">Besprechungsart</div>
+            <div class="meeting-type-grid">
+              <button class="meeting-type selected" type="button" data-type="Teams">Teams<span>Online Beratungsgespräch</span></button>
+              <button class="meeting-type" type="button" data-type="Telefon">Telefon<span>Wir rufen dich an</span></button>
+              <button class="meeting-type" type="button" data-type="Vor Ort">Vor Ort<span>Breitfeldstrasse 8, 9015 St. Gallen</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <div class="form-section-title">Kontaktdaten prüfen</div>
+        <div class="input-row">
+          <div class="field"><label>Vorname</label><input id="bookFirstName"></div>
+          <div class="field"><label>Nachname</label><input id="bookLastName"></div>
+          <div class="field"><label>Telefon</label><input id="bookPhone" type="tel"></div>
+          <div class="field"><label>E-Mail</label><input id="bookEmail" type="email"></div>
+        </div>
+      </div>
+
+      <button class="btn btn-primary" style="margin-top:18px" id="confirmBooking">Termin verbindlich reservieren</button>
+      <div id="bookingSuccess" class="success-box hidden">
+        <strong>Termin reserviert.</strong><br>
+        Vielen Dank. Im Live-System wird die Terminbestätigung automatisch per E-Mail versendet.
+      </div>
+    </section>
+
+    <aside class="booking-summary">
+      <h3>Dein Beratungstermin</h3>
+      <p>Persönliches Gespräch zur Firmengründung oder Firmenänderung.</p>
+      <div class="summary-row"><span>Datum</span><strong id="bookDaySummary">Mittwoch, 17. Juni 2026</strong></div>
+      <div class="summary-row"><span>Uhrzeit</span><strong id="bookTimeSummary">10:30</strong></div>
+      <div class="summary-row"><span>Dauer</span><strong id="bookDurationSummary">30 Minuten</strong></div>
+      <div class="summary-row"><span>Format</span><strong id="bookTypeSummary">Teams</strong></div>
+      <div class="summary-row"><span>Kontakt</span><strong>dinifirma.ch</strong></div>
+      <div class="summary-note">Breitfeldstrasse 8, 9015 St. Gallen<br>071 221 00 00<br>info@dinifirma.ch</div>
+    </aside>
+  </div>
+</main>
+
+<script src="app.js"></script>
+<script>
+const state=loadState();
+const chatLead=JSON.parse(localStorage.getItem("dinifirma_chat_lead")||"{}");
+const contact=state.contact||{};
+document.getElementById("bookFirstName").value=contact.firstName||chatLead.firstName||"";
+document.getElementById("bookLastName").value=contact.lastName||"";
+document.getElementById("bookPhone").value=contact.phone||chatLead.phone||"";
+document.getElementById("bookEmail").value=contact.email||chatLead.email||"";
+
+const dateLabels = {
+  "2026-06-17":"Mittwoch, 17. Juni 2026",
+  "2026-06-18":"Donnerstag, 18. Juni 2026",
+  "2026-06-19":"Freitag, 19. Juni 2026",
+  "2026-06-22":"Montag, 22. Juni 2026",
+  "2026-06-01":"Montag, 1. Juni 2026",
+  "2026-06-02":"Dienstag, 2. Juni 2026",
+  "2026-06-03":"Mittwoch, 3. Juni 2026",
+  "2026-06-04":"Donnerstag, 4. Juni 2026",
+  "2026-06-05":"Freitag, 5. Juni 2026",
+  "2026-06-06":"Samstag, 6. Juni 2026",
+  "2026-06-07":"Sonntag, 7. Juni 2026",
+  "2026-06-08":"Montag, 8. Juni 2026",
+  "2026-06-09":"Dienstag, 9. Juni 2026",
+  "2026-06-10":"Mittwoch, 10. Juni 2026",
+  "2026-06-11":"Donnerstag, 11. Juni 2026",
+  "2026-06-12":"Freitag, 12. Juni 2026",
+  "2026-06-13":"Samstag, 13. Juni 2026",
+  "2026-06-14":"Sonntag, 14. Juni 2026",
+  "2026-06-15":"Montag, 15. Juni 2026",
+  "2026-06-16":"Dienstag, 16. Juni 2026",
+  "2026-06-20":"Samstag, 20. Juni 2026",
+  "2026-06-21":"Sonntag, 21. Juni 2026",
+  "2026-06-23":"Dienstag, 23. Juni 2026",
+  "2026-06-24":"Mittwoch, 24. Juni 2026",
+  "2026-06-25":"Donnerstag, 25. Juni 2026",
+  "2026-06-26":"Freitag, 26. Juni 2026",
+  "2026-06-27":"Samstag, 27. Juni 2026",
+  "2026-06-28":"Sonntag, 28. Juni 2026",
+  "2026-06-29":"Montag, 29. Juni 2026",
+  "2026-06-30":"Dienstag, 30. Juni 2026"
+};
+
+let booking={
+  date:"2026-06-17",
+  time:"10:30",
+  duration:"30 Minuten",
+  type:"Teams"
+};
+
+function updateBookingSummary(){
+  document.getElementById("selectedDateTitle").textContent=dateLabels[booking.date] || booking.date;
+  document.getElementById("bookDaySummary").textContent=dateLabels[booking.date] || booking.date;
+  document.getElementById("bookTimeSummary").textContent=booking.time;
+  document.getElementById("bookDurationSummary").textContent=booking.duration;
+  document.getElementById("bookTypeSummary").textContent=booking.type;
+}
+
+document.getElementById("bookingDateSelect").addEventListener("change",(e)=>{
+  booking.date=e.target.value;
+  document.querySelectorAll(".calendar-day.available").forEach(btn=>{
+    btn.classList.toggle("selected",btn.dataset.date===booking.date);
+  });
+  updateBookingSummary();
+});
+
+document.querySelectorAll(".calendar-day.available").forEach(btn=>btn.addEventListener("click",()=>{
+  booking.date=btn.dataset.date;
+  document.getElementById("bookingDateSelect").value=booking.date;
+  document.querySelectorAll(".calendar-day.available").forEach(x=>x.classList.remove("selected"));
+  btn.classList.add("selected");
+  updateBookingSummary();
+}));
+
+document.querySelectorAll(".time-slot").forEach(btn=>btn.addEventListener("click",()=>{
+  booking.time=btn.dataset.time;
+  document.getElementById("bookingTimeSelect").value=booking.time;
+  document.querySelectorAll(".time-slot").forEach(x=>x.classList.remove("selected"));
+  btn.classList.add("selected");
+  updateBookingSummary();
+}));
+
+document.getElementById("bookingTimeSelect").addEventListener("change",(e)=>{
+  booking.time=e.target.value;
+  document.querySelectorAll(".time-slot").forEach(btn=>{
+    btn.classList.toggle("selected",btn.dataset.time===booking.time);
+  });
+  updateBookingSummary();
+});
+
+document.getElementById("bookingDurationSelect").addEventListener("change",(e)=>{
+  booking.duration=e.target.value;
+  updateBookingSummary();
+});
+
+document.querySelectorAll(".meeting-type").forEach(btn=>btn.addEventListener("click",()=>{
+  booking.type=btn.dataset.type;
+  document.querySelectorAll(".meeting-type").forEach(x=>x.classList.remove("selected"));
+  btn.classList.add("selected");
+  updateBookingSummary();
+}));
+
+document.getElementById("confirmBooking").addEventListener("click",()=>{
+  const firstName=document.getElementById("bookFirstName").value.trim();
+  const lastName=document.getElementById("bookLastName").value.trim();
+  const phone=document.getElementById("bookPhone").value.trim();
+  const email=document.getElementById("bookEmail").value.trim();
+  if(!firstName||!phone||!email) return alert("Bitte ergänze mindestens Vorname, Telefon und E-Mail.");
+  localStorage.setItem("dinifirma_booking",JSON.stringify({...booking, firstName, lastName, phone, email}));
+  document.getElementById("bookingSuccess").classList.remove("hidden");
+});
+
+updateBookingSummary();
+</script>
+</body>
+</html>

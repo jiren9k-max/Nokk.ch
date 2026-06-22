@@ -1,0 +1,63 @@
+<!DOCTYPE html><html lang="de-CH"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Bestellung – dinifirma.ch</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+  <link rel="apple-touch-icon" href="assets/favicon-180.png">
+  <link rel="shortcut icon" href="assets/favicon.ico">
+
+  <link rel="stylesheet" href="styles.css"></head><body class="funnel-body">
+
+<header class="funnel-header">
+  <div class="container top">
+    <a class="logo" href="index.html" aria-label="dinifirma.ch"><img class="logo-wordmark" src="assets/dinifirma-wordmark.png" alt="dinifirma.ch"></a>
+    <div class="steps-top"><div class="step-pill done"><span class="num">1</span><span>Vorhaben</span></div><span class="arrow">⟶</span><div class="step-pill done"><span class="num">2</span><span>Paket</span></div><span class="arrow">⟶</span><div class="step-pill done"><span class="num">3</span><span>Partner</span></div><span class="arrow">⟶</span><div class="step-pill done"><span class="num">4</span><span>Extras</span></div><span class="arrow">⟶</span><div class="step-pill done"><span class="num">5</span><span>Details</span></div><span class="arrow">⟶</span><div class="step-pill active"><span class="num">6</span><span>Bestellung</span></div></div>
+    <div class="support"><strong>Support: 071 221 00 00</strong><div class="langs">DE &nbsp; FR &nbsp; IT &nbsp; EN</div></div>
+  </div>
+</header>
+
+<main class="container funnel-shell"><div class="funnel-grid">
+<section class="funnel-card">
+<span class="badge"><span class="dot"></span>Schritt 6 von 6</span>
+<h1>Gründung verbindlich starten.</h1>
+<p class="intro">Prüfe deine Angaben und bestätige deine Auswahl.</p>
+<div class="review">
+<div><span>Firma</span><strong id="rName">Noch nicht angegeben</strong></div>
+<div><span>Rechtsform</span><strong id="rLegal">Noch nicht angegeben</strong></div>
+<div><span>Kanton</span><strong id="rCanton">Noch nicht angegeben</strong></div>
+<div><span>Paket</span><strong id="rPackage">Basic</strong></div>
+<div><span>Partnerangebote</span><strong id="rPartners">Keine ausgewählt</strong></div>
+<div><span>Zusatzleistungen</span><strong id="rExtras">Keine ausgewählt</strong></div>
+<div><span>Zu bezahlender Paketpreis</span><strong id="rTotal">CHF 150.–</strong></div>
+<div><span>Kontakt</span><strong id="rContact">Noch nicht angegeben</strong></div>
+</div>
+<div class="external-note"><strong>Gut zu wissen:</strong> Externe Gebühren wie Handelsregisterkosten, Beglaubigungen und allfällige Bankgebühren sind nicht im Paketpreis enthalten. Wir zeigen dir vor dem Abschluss klar, welche zusätzlichen Kosten in deinem Fall entstehen können.</div>
+<label class="checkbox-line"><input type="checkbox"> <span>Ich bestätige, dass meine Angaben korrekt sind.</span></label>
+<label class="checkbox-line"><input type="checkbox"> <span>Ich akzeptiere die AGB und die Datenschutzerklärung.</span></label>
+<label class="checkbox-line"><input type="checkbox"> <span>Ich möchte die freiwillig ausgewählten Partnerangebote nutzen und die jeweiligen Voraussetzungen prüfen lassen.</span></label>
+<div class="actions"><button class="btn btn-secondary" onclick="back('funnel-5-details.html')">Zurück</button><button class="btn btn-accent" id="submitBtn">Gründung verbindlich starten</button></div>
+<div id="success" class="info good hidden"><strong>Vielen Dank.</strong><br>Deine Anfrage wurde im Prototyp erfolgreich erfasst. Im Live-System wird die Bestellung an das CRM übermittelt.<div class="after-submit-actions"><a class="btn btn-primary" href="termin.html">Termin direkt vereinbaren</a><a class="btn btn-secondary" href="index.html">Zur Startseite</a></div></div>
+</section>
+
+<aside class="summary-card">
+  <h3>Deine Offerte</h3>
+  <div class="summary-row"><span>Paket</span><strong id="sPackage">Basic</strong></div>
+  <div class="summary-row"><span>Paketpreis</span><strong id="sPackagePrice">CHF 150.–</strong></div>
+  <div class="summary-row"><span>Partnervergünstigungen</span><strong id="sDiscount">– CHF 0.–</strong></div>
+  <div class="summary-row"><span>Zusatzleistungen</span><strong id="sExtras">0 ausgewählt</strong></div>
+  <div class="summary-total"><span>Zu bezahlen</span><strong id="sTotal">CHF 150.–</strong></div>
+  <div class="saving" id="sSaving">Du kannst deinen Paketpreis mit passenden Partnerangeboten reduzieren.</div>
+  <div class="summary-note">Vergünstigungen werden maximal bis zur Höhe des Paketpreises angerechnet. Eine Auszahlung ist nicht möglich.</div>
+</aside>
+
+</div></main>
+<script src="app.js"></script><script>
+const state=loadState(); updateSummary(state);
+document.getElementById("rName").textContent=state.companyName||"Noch nicht angegeben";
+document.getElementById("rLegal").textContent=state.legal||"Noch nicht angegeben";
+document.getElementById("rCanton").textContent=state.canton||"Noch nicht angegeben";
+document.getElementById("rPackage").textContent=state.packageName;
+document.getElementById("rPartners").textContent=(state.discounts||[]).length?state.discounts.map(x=>x.name).join(", "):"Keine ausgewählt";
+document.getElementById("rExtras").textContent=(state.extras||[]).length?state.extras.join(", "):"Keine ausgewählt";
+document.getElementById("rTotal").textContent=money(totalPrice(state));
+document.getElementById("rContact").textContent=((state.contact||{}).firstName||"")+" "+((state.contact||{}).lastName||"");
+document.getElementById("submitBtn").addEventListener("click",()=>document.getElementById("success").classList.remove("hidden"));
+</script></body></html>
