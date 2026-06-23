@@ -123,8 +123,16 @@ const DINIFIRMA_CONTACT = {
 document.querySelectorAll('.faq-item').forEach(item => {
   item.addEventListener('click', () => {
     const isActive = item.classList.contains('active');
-    document.querySelectorAll('.faq-item.active').forEach(el => el.classList.remove('active'));
-    if (!isActive) item.classList.add('active');
+    document.querySelectorAll('.faq-item.active').forEach(el => {
+      el.classList.remove('active');
+      const btn = el.querySelector('.faq-item__trigger');
+      if (btn) btn.setAttribute('aria-expanded', 'false');
+    });
+    if (!isActive) {
+      item.classList.add('active');
+      const btn = item.querySelector('.faq-item__trigger');
+      if (btn) btn.setAttribute('aria-expanded', 'true');
+    }
   });
 });
 
@@ -254,6 +262,43 @@ document.addEventListener('keydown', (e) => {
   input.addEventListener("keydown",e=>{if(e.key==="Enter") submitInput();});
 })();
 
+
+/* ===== Scroll Animations (IntersectionObserver) ===== */
+(function initScrollAnimations(){
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+})();
+
+/* ===== Testimonial Slider ===== */
+(function initTestimonialSlider(){
+  const track = document.getElementById('testimonialsTrack');
+  const navBtns = document.querySelectorAll('.testimonials-nav button');
+  if (!track || navBtns.length === 0) return;
+  let currentSlide = 0;
+  function goToSlide(index) {
+    const card = track.querySelector('.testimonial-card');
+    if (!card) return;
+    const gap = 20;
+    const cardWidth = card.offsetWidth;
+    const offset = -index * (cardWidth + gap);
+    track.style.transform = 'translateX(' + offset + 'px)';
+    navBtns.forEach((btn, i) => {
+      btn.classList.toggle('active', i === index);
+      btn.setAttribute('aria-selected', i === index ? 'true' : 'false');
+    });
+    currentSlide = index;
+  }
+  navBtns.forEach(btn => {
+    btn.addEventListener('click', () => goToSlide(parseInt(btn.dataset.index)));
+  });
+  window.addEventListener('resize', () => { goToSlide(currentSlide); });
+})();
 
 /* Optional package preselection from main page */
 (function preselectPackageFromUrl(){
